@@ -1,43 +1,66 @@
 // src/styles/Comment.scss
 .comment {
   margin: 15px 0;
-  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
   transition: background-color 0.3s;
 
   &.level-1 {
-    background-color: #e9f7ef; // Light green for main comments
+    p {
+      background-color: #fff;
+      padding: 15px;
+    }
   }
 
   &.level-2 {
-    background-color: #d1e7dd; // Light green for replies
+    padding: 0 15px;
+    padding-right: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0;
+    p {
+      padding-top: 15px;
+      padding-left: 10px;
+    }
   }
 
   &.level-3 {
-    background-color: #cfe2f3; // Light blue for nested replies
+    margin-left: 15px;
+    padding: 0 15px;
+    padding-right: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0;
+    p {
+      padding-top: 15px;
+      padding-left: 10px;
+    }
   }
 
   &.level-4 {
-    background-color: #e2e3e5; // Light grey for deeper replies
+    margin-left: 15px;
+    padding: 0 15px;
+    padding-right: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0;
   }
 
-  &:hover {
-    background-color: #f1f1f1; // Change on hover
-  }
+  // &:hover {
+  //   background-color: #f1f1f1; // Change on hover
+  // }
+  
 }
 
 // src/styles/UpcomingSection.scss
-
+.app {
+  background-color: #f5f7fb;
+}
 .upcoming-section {
   max-width: 800px; // Set a maximum width
   margin: 20px auto; // Center the container
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
+  
+  .event-block {
+    background-color: #fff;
+    padding: 15px;
+  }
 
   h2 {
     text-align: center;
@@ -64,11 +87,14 @@
   .button-block {
     div {
       text-align: right;
+      .submit-button {
+        margin-top: 15px;
+        border-radius: 0;
+      }
       button {
-        margin-top: 10px;
         padding: 8px 12px;
         border: none;
-        border-radius: 5px;
+        border-radius: 0;
         background-color: #007bff;
         color: white;
         cursor: pointer;

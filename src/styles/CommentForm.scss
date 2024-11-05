@@ -3,10 +3,8 @@
 .comment-form {
     margin: 10px 0;
     padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9; // Light background
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    border-radius: 0;
+    background-color: #fff; // Light background
     transition: background-color 0.3s, border 0.3s; // Smooth transitions
     text-align: right;
 
@@ -27,9 +25,9 @@
         height: 150px;
         padding: 12px 20px;
         box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        background-color: #f5f5f5;
         font-size: 16px;
         resize: none;
     }
@@ -38,7 +36,7 @@
         margin-top: 10px;
         padding: 8px 12px;
         border: none;
-        border-radius: 5px;
+        border-radius: 0;
         background-color: #007bff;
         color: white;
         cursor: pointer;

@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import React, { useEffect, useState } from 'react';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from './firebase';
+import Navbar from './components/Navbar';
+import UpcomingSection from './components/UpcomingSection';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setIsAuthenticated(!!user);
+        });
+        return () => unsubscribe();
+    }, []);
+
+    const handleLogout = () => {
+        signOut(auth).then(() => setIsAuthenticated(false));
+    };
+
+    return (
+        <div className="app">
+            <Navbar 
+                isAuthenticated={isAuthenticated} 
+                onLogin={() => setIsAuthenticated(true)} 
+                onLogout={handleLogout} 
+            />
+            <UpcomingSection isAuthenticated={isAuthenticated} />
+        </div>
+    );
+};
 
 export default App;

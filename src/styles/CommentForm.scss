@@ -1,0 +1,52 @@
+// src/styles/Comment.scss
+
+.comment-form {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9; // Light background
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    transition: background-color 0.3s, border 0.3s; // Smooth transitions
+    text-align: right;
+
+    &.main-comment {
+        background-color: #f9f9f9; // Main comment background
+    }
+
+    .main-comment textarea {
+        height: 80px; // Height of the textarea
+    }
+
+    &.reply-comment {
+        background-color: #f1f1f1; // Reply background
+    }
+
+    .main-comment-input, .reply-comment-input {
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: none;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 16px;
+    
+        &:hover {
+          background-color: #0056b3; // Darker blue on hover
+        }
+      }
+}

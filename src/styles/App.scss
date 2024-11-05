@@ -1,0 +1,16 @@
+// src/styles/App.scss
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
